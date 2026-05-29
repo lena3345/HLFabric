@@ -305,4 +305,4 @@ peer chaincode invoke \
   --peerAddresses localhost:9051 --tlsRootCertFiles $PEER_ORG2_TLS \
   -c '{"function":"EmitirCertificado","Args":["CERT-2026-HACK","Atacante","Título Falso","2026-05-29"]}'
 ```
-> **Resultado esperado:** La
+> **Resultado esperado:** La blockchain bloquea la escritura en base a las políticas definidas en el Chaincode. Aparecerá el error programado: `Error: endorsement failure during invoke. response: status:500 message:"ACCESO DENEGADO: Tu organización (Org2MSP) no tiene permisos. Solo la Universidad (Org1MSP) puede emitir títulos."`
